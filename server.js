@@ -19,7 +19,7 @@ app.get ('/user', function(req, res){
 	res.render('index.ejs');
 })
 
-app.get ('/', function(req, res){
+app.get('/', function(req, res){
 
 	var quotes = {
 		quote: [{
@@ -33,15 +33,18 @@ app.get ('/', function(req, res){
 			"author": 'Bruce Lee'}]
 	};
 	
-	var random = Math.floor(Math.random() * quotes.length)
-	var userStuff = quotes[random];
+	var random = Math.floor(Math.random()* quotes['quote'].length)
+	console.log(random);
+	var userStuff = quotes['quote'][random]['text'];
 	res.send(userStuff);
+	console.log(userStuff)
 });
 
-app.post('/', function(req, res){
-	var data = req.body.quotes[random];
+// app.post('/', function(req, res){
+// 	var data = req.body.quotes[random];
+// 	console.log('blah blah posting')
 	
-});
+// });
 
 app.listen(3000);
 

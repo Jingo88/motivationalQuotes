@@ -5,7 +5,7 @@ button.addEventListener('click', function(){
 });
 
 function randomQuote(){
-    var url = "localhost:3000/"
+    var url = "http://localhost:3000/"
     var xhr = new XMLHttpRequest();
     
     xhr.addEventListener('load', function(e) {
