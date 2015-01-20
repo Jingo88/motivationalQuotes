@@ -34,31 +34,18 @@ app.get ('/', function(req, res){
 	};
 	
 	var random = Math.floor(Math.random() * quotes.length)
-
-	res.send(quotes[random]);
+	var userStuff = quotes[random];
+	res.send(userStuff);
 });
 
 app.post('/', function(req, res){
 	var data = req.body.quotes[random];
 	
-
 });
 
 app.listen(3000);
 
-function sendQuote(){
-    var movie_url = encodeURI(movie)
-    var url = "http://omdbapi.com/?t=" + movie_url
-    var xhr = new XMLHttpRequest();
-    
-    xhr.addEventListener('load', function(e) {
-        var d = xhr.responseText
-        var parsed = JSON.parse(d)
 
-    })
-    xhr.open("GET", url);
-    xhr.send();
-}
 // app.get('/motivate', function(req, res){
 // 	res.render('index.ejs', {name: quotes[random]});
 // });
